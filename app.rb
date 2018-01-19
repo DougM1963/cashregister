@@ -1,16 +1,24 @@
 require "sinatra"
-#require_relative "bookisbn.rb"
+require_relative "cashregister.rb"
 
 get '/' do
 	erb :home
 end
 
 post '/item_choice' do
-    item = params[:item]
-    redirect '/result?item=' + item
+    jeans = params[:jeans]
+    sweatshirt = params[:sweatshirt]
+    total = 0
+    if jeans == "t"
+    	total = total + item_name("Mens Jeans")
+    end
+    if sweatshirt == "t"
+    	total = total + item_name("Mens Sweatshirt")
+    end
+    redirect '/result?total=' + total 
 end
 
 get '/result' do
-	item = params[:item]
-    erb :result, :locals => {:item => item}
+	total = params[:total]
+    erb :result, :locals => {:total => total}
 end
