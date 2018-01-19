@@ -7,13 +7,43 @@
 <link href="<%= url('/css/main.css') %>" rel= "stylesheet" type="text/css" />
 </head>
 <body>
-The clothing you selected is:
+<%
+   total = 0
+    if jeans == "t"
+    	total = total + item_name("Mens Jeans")
+    	jeans_picture = picture("Mens Jeans")
+    end
+    if sweatshirt == "t"
+    	total = total + item_name("Mens Sweatshirt")
+    	sweatshirt_picture = picture("Mens Sweatshirt")
+    end
+       if socks == "t"
+    	total = total + item_name("Mens Socks")
+    	socks_picture = picture("Mens Socks")
+    end
+    if underwear == "t"
+    	total = total + item_name("Mens Underwear")
+    	underwear_picture = picture("Mens Underwear")
+    end
+    if shoes == "t"
+    	total = total + item_name("Mens Shoes")
+    	shoes_picture = picture("Mens Shoes")
+    end
+    %>
+    The clothing you selected is:<br>
+    Shopping Cart<br>
+<img src = <%= sweatshirt_picture %> align="center"; width="50"; height="50";>
+<img src = <%= jeans_picture %> align="center"; width="50"; height="50";>
+<img src = <%= socks_picture %> align="center"; width="50"; height="50";>
+<img src = <%= underwear_picture %> align="center"; width="50"; height="50";>
+<img src = <%= shoes_picture %> align="center"; width="50"; height="50";>
 <br>
+    Total is:
 $<%= total.round(2) %>
 <br>
 <br>
 <br>
-What else can I get you today?
+Do you want to change your order? If so select Go button
 <a href='//localhost:4567'>Go!</a>
 </center>
 </body>

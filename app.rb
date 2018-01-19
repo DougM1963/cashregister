@@ -8,17 +8,17 @@ end
 post '/item_choice' do
     jeans = params[:jeans]
     sweatshirt = params[:sweatshirt]
-    total = 0
-    if jeans == "t"
-    	total = total + item_name("Mens Jeans")
-    end
-    if sweatshirt == "t"
-    	total = total + item_name("Mens Sweatshirt")
-    end
-    redirect '/result?total=' + total 
+    socks = params[:socks]
+    underwear = params[:underwear]
+    shoes = params[:shoes]
+    redirect '/result?jeans=' + jeans +'&sweatshirt=' + sweatshirt + '&socks=' + socks +'&underwear=' + underwear + '&shoes=' + shoes
 end
 
 get '/result' do
-	total = params[:total]
-    erb :result, :locals => {:total => total}
+	jeans = params[:jeans]
+    sweatshirt = params[:sweatshirt]
+    socks = params[:socks]
+    underwear = params[:underwear]
+    shoes = params[:shoes]
+    erb :result, :locals => {:jeans => jeans, :sweatshirt => sweatshirt, :socks => socks, :underwear => underwear, :shoes => shoes}
 end
