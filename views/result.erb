@@ -1,0 +1,22 @@
+<center>
+<script src= "/js/getdate.js"> 
+</script>
+<p id="date"> </p>
+<head>
+<title>Cash Register</title>
+<link href="<%= url('/css/main.css') %>" rel= "stylesheet" type="text/css" />
+</head>
+<body>
+The clothing you selected is:
+<br>
+<%= item %>
+<br>
+<br>
+<br>
+What else can I get you today?
+<a href='//localhost:4567'>Go!</a>
+</center>
+</body>
+<script>
+window.onload=getOrderDate('date');
+</script>
