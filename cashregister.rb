@@ -5,7 +5,8 @@ shopping_hash[item]
 end
 
 def picture(cloths)
-	 picture_hash = {"Mens Jeans" => "img//jeans.png", "Mens Sweatshirt" => "img//shirt.png", "Mens Socks" => "img//socks.png", 
+	picture_hash = {"Mens Jeans" => "img//jeans.png", "Mens Sweatshirt" => "img//shirt.png", "Mens Socks" => "img//socks.png", 
     "Mens Underwear" => "img//underwear.png", "Mens Shoes" => "img//shoes.png"}
 picture_hash[cloths]
 end
+

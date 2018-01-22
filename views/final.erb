@@ -1,0 +1,30 @@
+<center>
+<script src= "/js/getdate.js"> 
+</script>
+<p id="date"> </p>
+<head>
+<title>Cash Register</title>
+<link href="<%= url('/css/main.css') %>" rel= "stylesheet" type="text/css" />
+</head>
+<body>
+<img alt="doug" align="left" src="/img/jeans.png" width="300" height="450" />
+<img alt="doug" align="right" src="/img/shirt.png" width="300" height="450" />
+<div class="title">Thank you for shopping Dapper Doug`s</div>
+<br>
+Your total is:
+<br>
+$<%= total.round(2) %>
+<br> 
+You gave me:
+<br>
+<br>
+Your change is:
+<br>
+<br>
+<div class="request">Please come back again soon</div><br>
+<img alt="doug" align="center" src="/img/shoes.png" width="150" height="150" />
+</center>
+</body>
+<script>
+window.onload=getOrderDate('date');
+</script>

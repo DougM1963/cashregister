@@ -7,44 +7,40 @@
 <link href="<%= url('/css/main.css') %>" rel= "stylesheet" type="text/css" />
 </head>
 <body>
+<img alt="doug" align="left" src="/img/jeans.png" width="300" height="450" />
+<img alt="doug" align="right" src="/img/shirt.png" width="300" height="450" />
 <%
    total = 0
     if jeans == "t"
     	total = total + item_name("Mens Jeans")
-    	jeans_picture = picture("Mens Jeans")
     end
     if sweatshirt == "t"
     	total = total + item_name("Mens Sweatshirt")
-    	sweatshirt_picture = picture("Mens Sweatshirt")
     end
        if socks == "t"
     	total = total + item_name("Mens Socks")
-    	socks_picture = picture("Mens Socks")
     end
     if underwear == "t"
     	total = total + item_name("Mens Underwear")
-    	underwear_picture = picture("Mens Underwear")
     end
     if shoes == "t"
     	total = total + item_name("Mens Shoes")
-    	shoes_picture = picture("Mens Shoes")
     end
     %>
-    The clothing you selected is:<br>
-    Shopping Cart<br>
-<img src = <%= sweatshirt_picture %> align="center"; width="50"; height="50";>
-<img src = <%= jeans_picture %> align="center"; width="50"; height="50";>
-<img src = <%= socks_picture %> align="center"; width="50"; height="50";>
-<img src = <%= underwear_picture %> align="center"; width="50"; height="50";>
-<img src = <%= shoes_picture %> align="center"; width="50"; height="50";>
-<br>
-    Total is:
-$<%= total.round(2) %>
+    <div class="total">Your Total:<br>
+$<%= total.round(2) %></div>
 <br>
 <br>
+<form method="post" action="collection">
+<input type="integer" name="payment">
 <br>
-Do you want to change your order? If so select Go button
-<a href='//localhost:4567'>Go!</a>
+Put in payment?
+<br>
+<br>
+<input type="submit">
+</form>
+<br>
+<img alt="doug" align="center" src="/img/shoes.png" width="180" height="180" />
 </center>
 </body>
 <script>
