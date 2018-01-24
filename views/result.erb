@@ -27,17 +27,30 @@
     	total = total + item_name("Mens Shoes")
     end
     %>
-    <div class="total">Your Total:<br>
+<div class="total">Your Total:<br>
 $<%= total.round(2) %></div>
-<br>
-<br>
+ <div class="total">Your Tax:<br>
+$<%= (total * 0.06).round(2).to_f %></div>
+ <div class="total">Grand Total:<br>
+<%
+total = total.round(2)
+gtotal = total.round(2) + (total * 0.06).round(2).to_f 
+ %>
+$<%= total.round(2) + (total * 0.06).round(2).to_f %></div>
 <form method="post" action="collection">
 <input type="integer" name="payment">
+<input type="hidden" name="jeans" value = <%= jeans %>>
+<input type="hidden" name="sweatshirt" value = <%= sweatshirt %>>
+<input type="hidden" name="socks" value = <%= socks %>>
+<input type="hidden" name="underwear" value = <%= underwear %>>
+<input type="hidden" name="shoes" value = <%= shoes %>>
+<input type="hidden" name="total" value = <%= total %>>
+<input type="hidden" name="gtotal" value = <%= gtotal %>>
 <br>
 Put in payment?
 <br>
 <br>
-<input type="submit">
+<input type="submit" value="Check Out">
 </form>
 <br>
 <img alt="doug" align="center" src="/img/shoes.png" width="180" height="180" />
